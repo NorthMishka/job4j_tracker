@@ -15,6 +15,5 @@ public class Student {
         petya.voice();
         petya.voice();
         petya.voice();
-
     }
 }
