@@ -7,14 +7,14 @@ public class Battery {
         this.load = size;
     }
     public void exchange(Battery another) {
-        this.load = this.load + another.load;
-        another.load = 0;
+        another.load += this.load;
+        this.load = 0;
     }
     public static void main(String[] args) {
         Battery first = new Battery(20);
         Battery second = new Battery(65);
         System.out.println("first : " + first.load + ". second : " + second.load);
-        second.exchange(first);
+        first.exchange(second);
         System.out.println("first : " + first.load + ". second : " + second.load);
     }
 }
