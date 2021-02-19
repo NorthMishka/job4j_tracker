@@ -33,6 +33,23 @@ public class PointTest{
         Assert.assertEquals(expected, out, 0.5);
         System.out.println("result: " + out);
     }
-
+    @Test
+    public void when000to271then7() {
+        int expected = 7;
+        Point a = new Point(0, 0, 0);
+        Point b = new Point(2, 7, 1);
+        double out = a.distance3d(b);
+        Assert.assertEquals(expected, out, 0.5);
+        System.out.println("result: " + out);
+    }
+    @Test
+    public void when126to554then7() {
+        int expected = 5;
+        Point a = new Point(1, 2, 6);
+        Point b = new Point(5, 5, 4);
+        double out = a.distance3d(b);
+        Assert.assertEquals(expected, out, 0.5);
+        System.out.println("result: " + out);
+    }
 
 }
