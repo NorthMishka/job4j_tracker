@@ -7,6 +7,6 @@ public class College {
         student.setGroup("IT");
         student.setReceiptDate("15.06.2020");
 
-        System.out.println(student.getFullName()+ "\n" + student.getGroup()+ "\n" + student.getReceiptDate());
+        System.out.println(student.getFullName() + System.lineSeparator() + student.getGroup() + System.lineSeparator() + student.getReceiptDate());
     }
 }
