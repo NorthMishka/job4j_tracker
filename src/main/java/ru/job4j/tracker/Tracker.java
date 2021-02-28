@@ -29,11 +29,9 @@ public class Tracker {
         }
         return rsl;
     }
-
     public Item[] findAll() {
         return Arrays.copyOf(items, size);
     }
-
     public Item[] findByName(String key) {
         Item[] itemNames = new Item[items.length];
         int s = 0;
@@ -54,5 +52,14 @@ public class Tracker {
         } else {
             return true;
         }
+    }
+    public boolean delete(int id){
+        int index = indexOf(id);
+        if (index != -1) {
+            System.arraycopy(items, index + 1, items, index, size - index);
+            items[size - 1] = null;
+            size--;
+        }
+        return false;
     }
 }
