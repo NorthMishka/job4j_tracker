@@ -29,11 +29,11 @@ public class StartUI {
                     System.out.print("Enter id: ");
                     int id = Integer.parseInt(scanner.nextLine());
                     System.out.print("Enter new name task: ");
-                    String name2 = scanner.nextLine();
-                    Item item2 = new Item(name2);
-                    boolean rls = tracker.replace(id, item2);
+                    name = scanner.nextLine();
+                    item = new Item(name);
+                    boolean rls = tracker.replace(id, item);
                     if (rls) {
-                        System.out.println("Task id " + id + " edit " + item2);
+                        System.out.println("Task id " + id + " edit " + item);
                     } else {
                         System.out.println("Unknown task");
                     }
@@ -41,11 +41,11 @@ public class StartUI {
                 case 3:
                     System.out.println("Delete task");
                     System.out.print("Enter id: ");
-                    int id3 = Integer.parseInt(scanner.nextLine());
-                    System.out.println(id3);
-                    boolean rls3 = tracker.delete(id3);
-                    if (rls3) {
-                        System.out.println("Task id " + id3 + " delete");
+                    id = Integer.parseInt(scanner.nextLine());
+                    System.out.println(id);
+                    rls = tracker.delete(id);
+                    if (rls) {
+                        System.out.println("Task id " + id + " delete");
                     } else {
                         System.out.println("Unknown task");
                     }
@@ -53,11 +53,11 @@ public class StartUI {
                 case 4:
                     System.out.println("Find task by Id");
                     System.out.print("Enter id: ");
-                    int id4 = Integer.parseInt(scanner.nextLine());
-                    System.out.println(id4);
-                    Item rls4 = tracker.findById(id4);
-                    if (rls4 != null) {
-                        System.out.println("Name " + rls4.getName() + " id " + rls4.getId());
+                    id = Integer.parseInt(scanner.nextLine());
+                    System.out.println(id);
+                    item = tracker.findById(id);
+                    if (item != null) {
+                        System.out.println("Name " + item.getName() + " id " + item.getId());
                     } else {
                         System.out.println("Unknown task");
                     }
@@ -65,10 +65,10 @@ public class StartUI {
                 case 5:
                     System.out.println("Find task by name");
                     System.out.print("Enter name: ");
-                    String name5 = scanner.nextLine();
-                    Item[] item5 = tracker.findByName(name5);
-                        if (item5.length > 0) {
-                            for (Item value : item5) {
+                    name = scanner.nextLine();
+                    items = tracker.findByName(name);
+                        if (items.length > 0) {
+                            for (Item value : items) {
                                 System.out.println(value);
                             }
                         } else {
