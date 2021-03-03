@@ -8,7 +8,7 @@ public class DeleteAction implements UserAction{
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        int id = Integer.parseInt(input.askStr("Enter id: "));
+        int id = input.askInt("Enter id: ");
         System.out.println(id);
         boolean result = tracker.delete(id);
         if (result) {
