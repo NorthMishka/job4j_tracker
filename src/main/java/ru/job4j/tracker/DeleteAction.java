@@ -8,7 +8,7 @@ public class DeleteAction implements UserAction{
     }
     @Override
     public String name() {
-        return "=== Delete task ====";
+        return "Delete task";
     }
 
     @Override

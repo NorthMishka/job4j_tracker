@@ -8,16 +8,15 @@ public class FindByIdAction implements UserAction{
     }
     @Override
     public String name() {
-        return "=== Find task by Id ====";
+        return "Find task by Id";
     }
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
         int id = input.askInt("Enter id: ");
-        out.println(id);
         Item result = tracker.findById(id);
         if (result != null) {
-            out.println("Name: " + result.getName() + " id: " + result.getId());
+            out.println(result);
         } else {
             out.println("Unknown task");
         }

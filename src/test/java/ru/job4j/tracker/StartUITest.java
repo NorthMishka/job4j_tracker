@@ -84,4 +84,65 @@ public class StartUITest {
                         "0. Exit" + System.lineSeparator()
         ));
     }
+    @Test
+    public void whenFindAllAction() {
+        Tracker tracker = new Tracker();
+        Output out = new StubOutput();
+        Input in = new StubInput(new String[]{"0", "1"});
+        UserAction[] actions = {
+                new FindAllAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(), is(
+                "Menu." + System.lineSeparator()
+                        + "0. Show all task" + System.lineSeparator()
+                        + "1. Exit" + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. Show all task" + System.lineSeparator()
+                        + "1. Exit" + System.lineSeparator()
+        ));
+    }
+    @Test
+    public void whenFindByIdAction() {
+        Tracker tracker = new Tracker();
+        Output out = new StubOutput();
+        Item item = tracker.add(new Item("Find task by Id"));
+        Input in = new StubInput(new String[]{"0", String.valueOf(item.getId()), "1"});
+        UserAction[] actions = {
+                new FindByIdAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(), is(
+                "Menu." + System.lineSeparator()
+                        + "0. Find task by Id" + System.lineSeparator()
+                        + "1. Exit" + System.lineSeparator()
+                        + item + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. Find task by Id" + System.lineSeparator()
+                        + "1. Exit" + System.lineSeparator()
+        ));
+    }
+    @Test
+    public void whenFindByNameAction() {
+        Tracker tracker = new Tracker();
+        Output out = new StubOutput();
+        Item item = tracker.add(new Item("Find task by name"));
+        Input in = new StubInput(new String[]{"0", String.valueOf(item.getId()), "1"});
+        UserAction[] actions = {
+                new FindByNameAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(), is(
+                "Menu." + System.lineSeparator()
+                        + "0. Find task by name" + System.lineSeparator()
+                        + "1. Exit" + System.lineSeparator()
+                        + "Unknown task" + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. Find task by name" + System.lineSeparator()
+                        + "1. Exit" + System.lineSeparator()
+        ));
+    }
 }

@@ -8,7 +8,7 @@ public class ReplaceAction implements UserAction{
     }
     @Override
     public String name() {
-        return "=== Edit task ====";
+        return "Edit task";
     }
 
     @Override

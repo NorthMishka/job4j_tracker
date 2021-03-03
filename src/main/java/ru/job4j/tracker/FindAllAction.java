@@ -8,7 +8,7 @@ public class FindAllAction implements UserAction{
     }
     @Override
     public String name() {
-        return "=== Show all task ====";
+        return "Show all task";
     }
 
     @Override
