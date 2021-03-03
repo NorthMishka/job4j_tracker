@@ -18,9 +18,9 @@ public class ReplaceAction implements UserAction{
         Item item = new Item(name);
         boolean result = tracker.replace(id, item);
         if (result) {
-            System.out.println("Task id " + id + " edit");
+            out.println("Task id " + id + " edit");
         } else {
-            System.out.println("Unknown task");
+            out.println("Unknown task");
         }
         return true;
     }

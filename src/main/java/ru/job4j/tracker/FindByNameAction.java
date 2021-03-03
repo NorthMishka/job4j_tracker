@@ -17,10 +17,10 @@ public class FindByNameAction implements UserAction{
         Item[] item = tracker.findByName(name);
         if (item.length > 0) {
             for (Item value : item) {
-                System.out.println(value);
+                out.println(value);
             }
         } else {
-            System.out.println("Unknown task");
+            out.println("Unknown task");
         }
         return true;
     }

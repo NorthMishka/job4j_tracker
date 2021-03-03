@@ -14,12 +14,12 @@ public class FindByIdAction implements UserAction{
     @Override
     public boolean execute(Input input, Tracker tracker) {
         int id = input.askInt("Enter id: ");
-        System.out.println(id);
+        out.println(id);
         Item result = tracker.findById(id);
         if (result != null) {
-            System.out.println("Name: " + result.getName() + " id: " + result.getId());
+            out.println("Name: " + result.getName() + " id: " + result.getId());
         } else {
-            System.out.println("Unknown task");
+            out.println("Unknown task");
         }
         return true;
     }
