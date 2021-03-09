@@ -195,11 +195,9 @@ public class StartUITest {
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
         assertThat(selected, is(2));
-        ValidateInput input4 = new ValidateInput(out, in);
-        int selected4 = input4.askInt("Enter menu:");
+        int selected4 = input.askInt("Enter menu:");
         assertThat(selected4, is(4));
-        ValidateInput input6 = new ValidateInput(out, in);
-        int selected6 = input6.askInt("Enter menu:");
+        int selected6 = input.askInt("Enter menu:");
         assertThat(selected6, is(6));
 
     }
