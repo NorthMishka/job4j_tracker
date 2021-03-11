@@ -3,10 +3,18 @@ package ru.job4j.tracker;
 public class SingleTracker {
     private Tracker tracker = new Tracker();
     /* реализовать singleton */
+    private static SingleTracker instance = null;
 
+    private SingleTracker() {
 
+    }
 
-
+    public static SingleTracker getInstance() {
+        if (instance == null) {
+            instance = new SingleTracker();
+        }
+        return instance;
+    }
 
     public Item add(Item item) {
 
@@ -17,6 +25,7 @@ public class SingleTracker {
 
         return tracker.findById(id);
     }
+
     public Item[] findByName(String key) {
 
         return tracker.findByName(key);
